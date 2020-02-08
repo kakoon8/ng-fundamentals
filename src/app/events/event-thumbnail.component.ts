@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {IEvent} from './shared/index'
+import {IEvent} from './shared/index';
 @Component({
   selector: 'event-thumbnail',
   template: `<div [routerLink]= "['/events', event.id]" class = "well hoverwell thumbnail">
@@ -40,11 +40,11 @@ export class  EventThumbNailComponent {
 
 @Input () event: IEvent;
 
-getStartTimeStyle(): any{
+getStartTimeStyle(): any {
 if ( this.event && this.event.time === '8:00 am' )
   return {color: '#003300', 'font-weight' : 'bold'}
 
 
-return {}
+return {} ;
 }
 }
