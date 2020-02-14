@@ -6,7 +6,7 @@ export * from './events-list.component'
 export * from './shared/index'
 export * from './event-details/index'
 export * from './event-details/create-session.component'
-
+export * from './shared/duration.pipe'
 
 
 export * from './event-details/session-list.component'
