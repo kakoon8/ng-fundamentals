@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, ActivatedRouteSnapshot } from '@angular/router';
-
+import {HttpClientModule} from '@angular/common/http'
 import {
   EventsListComponent,
   EventThumbNailComponent,
@@ -12,7 +12,9 @@ import {
   CreateEventComponent,
   CreateSessionComponent,
   SessionListComponent,
-  DurationPipe
+  DurationPipe,
+  UpvoteComponent,
+  VoterService
 } from './events/index'
 
 import {EventsAppComponent } from './events-app.component';
@@ -34,7 +36,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
 
   declarations: [
@@ -50,11 +53,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CollapsibleWellComponent,
     SimpleModalComponent,
     ModalTriggerDirective,
+    UpvoteComponent,
+
     DurationPipe
   ],
 
    providers: [
      EventService,
+     VoterService,
      { provide: JQ_TOKEN, useValue: jQuery},
      { provide: TOASTR_TOKEN, useValue: toastr},
     EventListResolver,
