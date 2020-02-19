@@ -7,7 +7,7 @@ import {
   EventThumbNailComponent,
   EventService,
   EventDetailsComponent,
-  EventRouteActivator,
+  EventResolver,
   EventListResolver,
   CreateEventComponent,
   CreateSessionComponent,
@@ -33,8 +33,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
 
   imports: [
-    BrowserModule,
+
     RouterModule.forRoot(appRoutes),
+    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
@@ -63,9 +64,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
      VoterService,
      { provide: JQ_TOKEN, useValue: jQuery},
      { provide: TOASTR_TOKEN, useValue: toastr},
+     EventResolver,
     EventListResolver,
     AuthService,
-    EventRouteActivator,{
+    ,{
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState
     }],
